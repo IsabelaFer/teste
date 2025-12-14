@@ -416,7 +416,7 @@ footer p {
   margin: 0;
 }
 
-/* ============================= RESPONSIVIDADE ============================= */ 
+/* ============================= RESPONSIVIDADE ============================= */
 
 /* Tablet (768px a 1024px) */
 @media (max-width: 1024px) {
@@ -437,18 +437,17 @@ footer p {
     font-size: 1.8rem;
   }
   
-  /* Ajuste das fotos na tela inicial para tablet */
+  /* Fotos menores na tela inicial */
   .bloco img {
     max-width: 350px;
   }
 }
 
-/* Celular (até 768px) */
+/* Celular (até 768px) - MENU FUNCIONAL */
 @media (max-width: 768px) {
-  /* Navbar para mobile */
+  /* Ajustes gerais */
   .navbar {
     padding: 10px 15px;
-    flex-wrap: nowrap;
   }
   
   .logo {
@@ -460,153 +459,109 @@ footer p {
     height: 40px;
   }
   
-  /* MENU MOBILE FUNCIONAL - CORRIGIDO */
+  .banner-texto {
+    font-size: 1rem;
+    width: 95%;
+    padding: 0 15px;
+  }
+  
+  .conteudo {
+    padding: 20px 15px;
+  }
+  
+  /* MENU PRINCIPAL MOBILE */
   .nav-links {
-    display: none;
+    display: none; /* Inicialmente escondido */
     position: fixed;
     top: 70px;
     left: 0;
     right: 0;
     background-color: #FDFBD4;
     flex-direction: column;
-    padding: 20px;
+    padding: 0;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     z-index: 100;
     border-top: 2px solid #007B01;
-    max-height: 80vh;
-    overflow-y: auto;
   }
   
   .nav-links.ativo {
-    display: flex;
+    display: flex; /* Aparece quando tem a classe "ativo" */
   }
   
   .nav-links li {
     width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
   }
   
   .nav-links a {
-    padding: 12px 15px;
+    padding: 15px 20px;
     text-align: left;
     font-size: 1rem;
-    border-bottom: 1px solid #e0e0e0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
   }
   
-  .nav-links a:last-child {
-    border-bottom: none;
-  }
-  
-  /* Seta do dropdown no mobile */
-  .dropdown > a::after {
-    content: " ▼";
-    font-size: 0.8rem;
-    margin-left: 5px;
-  }
-  
+  /* Botão do menu hamburguer */
   .menu-toggle {
-    display: block;
-    margin-left: 10px;
-    position: relative;
-  }
-  
-  /* SUBMENU FUNCIONAL NO MOBILE - CORRIGIDO */
-  .submenu {
-    position: static;
-    display: none;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 10px;
-    background-color: rgba(0, 123, 1, 0.95);
+    display: block; /* Aparece apenas no mobile */
+    background: #007B01;
+    border: none;
+    font-size: 1.5rem;
+    color: #FDFBD4;
+    width: 45px;
+    height: 45px;
     border-radius: 5px;
-    box-shadow: none;
-    padding: 10px 0;
+    cursor: pointer;
+    margin-left: 10px;
   }
   
-  .dropdown.active .submenu {
-    display: block;
+  /* SUBMENU DAS OFICINAS */
+  .submenu {
+    display: none; /* Escondido inicialmente */
+    background-color: rgba(0, 123, 1, 0.95);
+    padding: 0;
+    width: 100%;
   }
   
-  .submenu li a {
-    padding: 10px 25px;
-    font-size: 0.95rem;
+  .submenu.ativo {
+    display: block; /* Aparece quando tem a classe "ativo" */
+  }
+  
+  .submenu li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  .submenu li:last-child a {
+  .submenu li:last-child {
     border-bottom: none;
   }
   
-  /* Fecha menu ao clicar fora (será controlado pelo JavaScript) */
-  
-  /* Banner */
-  .banner-texto {
-    font-size: 1rem;
-    padding: 0 15px;
-    width: 95%;
+  .submenu li a {
+    padding: 12px 30px;
+    color: #FDFBD4;
+    font-size: 0.95rem;
   }
   
-  /* Conteúdo */
-  .conteudo {
-    padding: 20px 15px;
-  }
-  
-  .secao-texto {
-    margin: 20px auto;
-  }
-  
+  /* Outros ajustes para mobile */
   .secao-texto h2 {
     font-size: 1.6rem;
   }
   
-  .secao-texto h3 {
-    font-size: 1.3rem;
-  }
-  
-  /* Blocos - Fotos menores no mobile */
-  .bloco {
-    margin-bottom: 30px;
-  }
-  
   .bloco img {
-    max-width: 100%; /* No mobile ocupa toda a largura */
+    max-width: 100%;
   }
   
-  /* Cards */
   .card {
     max-width: 100%;
   }
   
-  /* Galeria - Layout original adaptado para mobile */
-  .galeria-projeto .cards-container {
-    gap: 15px;
-  }
-  
   .galeria-projeto img {
-    width: calc(50% - 10px); /* 2 colunas no mobile */
+    width: calc(50% - 10px);
     height: 150px;
   }
   
-  /* Texto com imagem (Sobre) */
-  .texto-com-imagem {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px;
-    gap: 15px;
-  }
-  
-  .texto-com-imagem img {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .texto-com-imagem:nth-child(even) {
-    flex-direction: column;
-  }
-  
-  /* Vídeo */
   .video-container {
     flex-direction: column;
   }
@@ -614,13 +569,11 @@ footer p {
   .descricao-video {
     max-width: 100%;
     text-align: center;
-    padding: 0 10px;
   }
   
   .botao {
     width: 100%;
     max-width: 300px;
-    box-sizing: border-box;
   }
 }
 
@@ -639,33 +592,9 @@ footer p {
     font-size: 0.9rem;
   }
   
-  .secao-texto h2 {
-    font-size: 1.4rem;
-  }
-  
-  .secao-texto h3 {
-    font-size: 1.2rem;
-  }
-  
-  /* Fotos ainda menores em telas pequenas */
-  .bloco img {
-    max-width: 100%;
-  }
-  
-  /* Galeria - 1 coluna em telas muito pequenas */
   .galeria-projeto img {
     width: 100%;
     height: 180px;
-  }
-  
-  .botao {
-    padding: 12px 20px;
-    font-size: 1rem;
-  }
-  
-  .botao-menor {
-    padding: 8px 15px;
-    font-size: 0.9rem;
   }
   
   footer {
