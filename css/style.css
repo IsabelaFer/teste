@@ -1,11 +1,21 @@
 /* =============================
-   ESTILOS GERAIS
+   RESET E BASE
 ============================= */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #f4fdf4;
   color: #333;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -13,30 +23,38 @@ a {
 }
 
 /* =============================
-   CABEÇALHO E NAVBAR
+   FONTES
+============================= */
+@font-face {
+  font-family: 'Aloja';
+  src: url('Aloja-Light.otf') format('opentype');
+}
+
+/* =============================
+   TÍTULOS (AJUSTE GLOBAL)
+============================= */
+h1, h2, h3 {
+  font-family: 'Aloja', sans-serif;
+  color: #007B01;
+}
+
+/* =============================
+   CABEÇALHO / NAVBAR
 ============================= */
 header {
   background-color: #81c784;
-  color: #007B01;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-/* Container principal da navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #FDFBD4;
   padding: 10px 20px;
-  position: relative; /* necessário para z-index funcionar */
-  z-index: 10;
-}
-
-@font-face {
-    font-family: 'Aloja';
-    src: url('Aloja-Light.otf') format('opentype');
+  position: relative;
 }
 
 .logo {
@@ -46,17 +64,15 @@ header {
   font-family: 'Aloja';
   font-size: 1.5rem;
   color: #007B01;
-
 }
 
 .logo-icone {
   width: 55px;
   height: 55px;
   object-fit: contain;
-  vertical-align: middle;
 }
 
-/* Links principais */
+/* Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -77,39 +93,41 @@ header {
   border-radius: 5px;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
   background-color: #007B01;
   color: #FDFBD4;
 }
+
 .nav-links .ativo {
   background-color: #007B01;
   color: #FDFBD4;
 }
 
-/* Botão de menu (versão mobile) */
+/* Botão mobile */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: #FDFBD4;
+  font-size: 1.8rem;
+  color: #007B01;
+  cursor: pointer;
 }
 
 /* =============================
-   SUBMENU (DROP-DOWN)
+   SUBMENU
 ============================= */
 .submenu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 20;
   background-color: #007B01;
   list-style: none;
-  margin: 0;
   padding: 0;
-  min-width: 150px;
-  border-radius: 5px;
+  margin: 0;
+  min-width: 180px;
+  border-radius: 6px;
+  z-index: 20;
 }
 
 .submenu li a {
@@ -121,7 +139,6 @@ header {
   background-color: #209220;
 }
 
-/* Exibe o submenu quando passa o mouse */
 .dropdown:hover .submenu {
   display: block;
 }
@@ -132,41 +149,49 @@ header {
 .banner {
   position: relative;
   text-align: center;
-  z-index: 1;
 }
 
 .banner img {
   width: 100%;
-  height: auto;
   max-height: 350px;
   object-fit: cover;
   filter: brightness(85%);
 }
 
 .banner-texto {
-  font-family: 'Aloja';
-  font-size: 1.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #FDFBD4;
   text-shadow: 1px 1px 4px #000;
+  padding: 0 15px;
+}
+
+.banner-texto h2 {
+  font-size: 1.9rem;
+  color: #FDFBD4;
+}
+
+.banner-texto p {
+  font-size: 1rem;
 }
 
 /* =============================
-   CONTEÚDO PRINCIPAL
+   CONTEÚDO
 ============================= */
 .conteudo {
   padding: 40px 30px;
   text-align: center;
 }
 
-/* Botões */
+/* =============================
+   BOTÕES
+============================= */
 .botao,
 .botao-menor {
   display: inline-block;
-  background-color: #007b01;
+  background-color: #007B01;
   color: #FDFBD4;
   padding: 10px 20px;
   border-radius: 8px;
@@ -176,10 +201,34 @@ header {
 
 .botao:hover,
 .botao-menor:hover {
-  background-color: #007B01;
+  background-color: #005f00;
 }
 
-/* Cards */
+/* =============================
+   SEÇÃO TEXTO
+============================= */
+.secao-texto {
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.bloco {
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.bloco img {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+/* =============================
+   CARDS
+============================= */
 .cards-container {
   display: flex;
   justify-content: center;
@@ -192,8 +241,39 @@ header {
   background-color: #FDFBD4;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   width: 250px;
+}
+
+/* =============================
+   VÍDEO
+============================= */
+.video-projeto {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 1000px;
+}
+
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.video-container img {
+  width: 480px;
+  border-radius: 12px;
+}
+
+/* DESCRIÇÃO DO VÍDEO → TEXTO NORMAL */
+.descricao-video {
+  max-width: 450px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  text-align: left;
+  line-height: 1.6;
 }
 
 /* =============================
@@ -205,13 +285,7 @@ header {
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
-}
-
-.galeria-projeto img:hover,
-.galeria-oficina img:hover {
-  transform: scale(1.05);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
 /* =============================
@@ -228,141 +302,61 @@ footer {
 /* =============================
    RESPONSIVIDADE
 ============================= */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #81c784;
+    width: 100%;
+    background-color: #FDFBD4;
     position: absolute;
-    top: 60px;
-    right: 20px;
-    border-radius: 10px;
-    padding: 10px;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
   }
 
   .nav-links.ativo {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
+  .nav-links a {
+    text-align: center;
+    padding: 12px;
   }
-}
 
-.secao-texto {
-  width: 90%;
-  max-width: 700px;
-  margin: 40px auto;
-  text-align: left;
-  color: #333;
-  line-height: 1.6;
-  font-size: medium;
-}
+  .submenu {
+    position: static;
+    background-color: #81c784;
+  }
 
-.bloco {
-  margin-bottom: 40px;
-  text-align: justify;
-}
+  .dropdown:hover .submenu {
+    display: none;
+  }
 
-.bloco img {
-  width: 100%;
-  margin-top: 15px;
-  border-radius: 10px;
-}
+  /* BANNER MENOR NO CELULAR */
+  .banner-texto h2 {
+    font-size: 1.4rem;
+  }
 
-/* =============================
-   TEXTO COM IMAGEM (INTRODUÇÃO)
-============================= */
-.introducao {
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 0 20px;
-  text-align: left;
-}
+  .banner-texto p {
+    font-size: 0.9rem;
+  }
 
-.introducao h2{
-  font-family: 'Aloja';
-  color: #007B01;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.texto-com-imagem {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
-.texto-com-imagem img {
-  width: 30%;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  object-fit: cover;
-}
-
-.texto-com-imagem p {
-  flex: 1;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* Inverte a posição da imagem para os pares */
-.texto-com-imagem:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-/* Responsivo */
-@media (max-width: 800px) {
-  .texto-com-imagem {
+  .cards-container {
     flex-direction: column;
+    align-items: center;
   }
 
-  .texto-com-imagem img {
-    width: 100%;
-  }
-}
-
-/* ======== VÍDEO ======== */
-.video-projeto {
-  text-align: center;
-  font-family: 'Aloja';
-  color: #007B01;
-  margin: 60px auto;
-  max-width: 1000px;
-}
-
-.video-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.video-container iframe {
-  width: 480px;
-  height: 270px;
-  border-radius: 12px;
-}
-
-.descricao-video {
-  max-width: 450px;
-  font-family: sans-serif;
-  text-align: left;
-  color: #333;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .video-container {
-    flex-direction: column;
-  }
-
-  .video-container iframe {
+  .card {
     width: 90%;
-    height: 220px;
+  }
+
+  .video-container img {
+    width: 90%;
   }
 
   .descricao-video {
@@ -370,24 +364,3 @@ footer {
     text-align: center;
   }
 }
-
-.resumo-oficinas h2,
-  .resumo-oficinas h3 {
-    font-family: 'Aloja', sans-serif;
-    font-weight: 700;
-    color: #007B01;
-  }
-
-  .secao-texto h2,
-  .secao-texto h3 {
-    font-family: 'Aloja', sans-serif;
-    font-weight: 700;
-    color: #007B01;
-  }
-
-  .galeria-oficina h2,
-  .galeria-oficina h3 {
-    font-family: 'Aloja', sans-serif;
-    font-weight: 700;
-    color: #007B01;
-  }
